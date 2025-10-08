@@ -1,0 +1,34 @@
+project: DemoRL
+paths:
+  out_dir: outputs
+training:
+  enable: true
+  algo: sac
+  train_seeds: [0, 1]
+  max_steps: 10
+  fuzzy_prior:
+    warm_start_bc_steps: 5
+    kl_coeff_start: 0.1
+    kl_coeff_end: 0.01
+  safety:
+    lagrangian: true
+    constraints: [unsafe_time, rocof, saturation]
+    shield:
+      rate_limit: 0.1
+      u_min: -1.0
+      u_max: 1.0
+  residual_over_flc: true
+optimization:
+  enable: false
+  opt_seed: 7
+evaluation:
+  controllers: [RL]
+  scenarios: all
+  eval_seeds: [2, 3]
+  ablations: [no_shield, no_prior]
+metrics:
+  strict_mode: true
+  freq_allow_unobserved_pct: 0.01
+export:
+  dpi: 600
+  pack_name: Results_demo.zip
