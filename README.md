@@ -71,3 +71,16 @@ The validation report now includes:
 * `frequency_domain_metrics.csv` – PSD-derived indicators and damping estimates for excitation scenarios.
 * `perf_profile_7d_ci.csv` – bootstrap confidence intervals for the seven composite dimensions used in radar plots.
 * `combined_metrics_summary.csv` – per-metric mean, standard deviation, and sample counts across seeds.
+
+## 5. Contributing Guidelines
+
+We welcome contributions that improve controller strategies, analysis tooling, documentation, and UI/UX. To streamline reviews and ensure consistent quality across the project, please follow these steps when opening a pull request:
+
+1. **Open an Issue First:** Describe the bug, enhancement, or feature you plan to work on so maintainers can provide guidance or flag duplicates.
+2. **Create a Dedicated Branch:** Use a descriptive branch name (for example, `feature/new-probe-scenario` or `fix/pid-saturation`).
+3. **Add Tests & Documentation:** Update or create unit tests, validation scenarios, and README/Docs sections relevant to your change.
+4. **Run the Validation Suite:** Execute the workflows under `scripts/` or `run_training.py` where applicable to ensure no regressions are introduced.
+5. **Follow Coding Standards:** Adhere to the existing code style and linting configurations defined in `requirements.txt` and styled configs across the repository.
+6. **Submit a Detailed PR:** Summarize your changes, include validation evidence (logs, plots, metrics), and request review from relevant subject-matter maintainers.
+
+For any questions, feel free to start a discussion or reach out to the maintainers listed in the repository insights.
