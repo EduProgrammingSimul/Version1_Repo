@@ -1,5 +1,13 @@
 # PWR Controller Optimization & Monitoring Workbench (DTAF v3.0)
 
+## Description
+
+This workbench delivers an end-to-end toolkit for designing, optimizing, and validating
+pressurized water reactor (PWR) turbine governor controllers against realistic grid
+conditions. It unifies high-fidelity simulation models, configurable optimization
+pipelines, and streamlined reporting so researchers and engineers can iterate on control
+strategies with confidence.
+
 ## 1. Project Overview
 
 This project provides a comprehensive Python-based simulation framework for modeling the interaction between a Pressurized Water Reactor (PWR) nuclear power plant and the electrical grid. It focuses on the development, robust optimization, automated validation, and comparative analysis of advanced steam turbine governor control strategies.
