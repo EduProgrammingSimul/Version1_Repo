@@ -1,0 +1,24 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "type": "object",
+  "properties": {
+    "controller": {
+      "type": "string"
+    },
+    "scenario": {
+      "type": "string"
+    },
+    "dimension": {
+      "type": "string"
+    },
+    "value_norm": {
+      "type": "number"
+    }
+  },
+  "required": [
+    "controller",
+    "scenario",
+    "dimension",
+    "value_norm"
+  ]
+}

@@ -1,0 +1,11 @@
+{
+  "required_columns": [
+    "t",
+    "y_target",
+    "y_actual",
+    "u",
+    "action_cmd",
+    "actuator_saturated",
+    "freq_hz"
+  ]
+}

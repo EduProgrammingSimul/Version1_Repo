@@ -1,0 +1,14 @@
+﻿{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "type": "object",
+  "properties": {
+    "metric_i": { "type": "string" },
+    "metric_j": { "type": "string" },
+    "r": { "type": "number" },
+    "p_value": { "type": "number" },
+    "n": { "type": "integer" },
+    "method": { "type": "string" },
+    "constant_pair": { "type": "boolean" }
+  },
+  "required": ["metric_i", "metric_j", "r", "p_value", "n", "method"]
+}

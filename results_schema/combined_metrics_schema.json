@@ -1,0 +1,10 @@
+﻿{
+  "required_columns": [
+    "run_id",
+    "controller",
+    "scenario",
+    "metric",
+    "value",
+    "higher_is_better"
+  ]
+}

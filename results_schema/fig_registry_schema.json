@@ -1,0 +1,9 @@
+{
+  "required_columns": [
+    "figure_id",
+    "path_png",
+    "path_svg",
+    "caption",
+    "width_hint"
+  ]
+}

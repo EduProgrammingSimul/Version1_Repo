@@ -1,0 +1,23 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "type": "object",
+  "properties": {
+    "scenario": {
+      "type": "string"
+    },
+    "controller": {
+      "type": "string"
+    },
+    "score_norm": {
+      "type": "number"
+    },
+    "raw_score": {
+      "type": "number"
+    }
+  },
+  "required": [
+    "scenario",
+    "controller",
+    "score_norm"
+  ]
+}
