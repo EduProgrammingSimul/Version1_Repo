@@ -26,18 +26,14 @@ if [[ -z "$CONFIG" ]]; then
   exit 1
 fi
 
-PACK_NAME=$(python - "$CONFIG" <<'PY'
+PACK_NAME=$(python - <<'PY'
 import sys, yaml
 from pathlib import Path
-
-if len(sys.argv) < 2:
-    raise SystemExit("config path required")
-
 cfg = yaml.safe_load(Path(sys.argv[1]).read_text())
 pack = cfg.get('export', {}).get('pack_name', 'Results.zip')
 print(pack)
 PY
-)
+"$CONFIG")
 
 bash scripts/journal_train.sh --config "$CONFIG" ${STRICT}
 
