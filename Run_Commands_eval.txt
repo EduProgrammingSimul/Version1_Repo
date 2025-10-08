@@ -1,0 +1,19 @@
+
+
+$env:PYTHONPATH='.';
+
+python scripts/full_eval.py 
+	--out results 
+	--suite-file config/scenario_suite.txt 
+	--controllers PID FLC RL 
+	--eval-seed 42 
+	--eval-seeds 101 102
+
+python scripts/validate_and_report.py 
+	--controllers PID FLC RL 
+	--scenarios all 
+	--out results 
+	--eval-seed 42 
+	--eval-seeds 101 102 
+	--bootstrap-samples 2000
+

@@ -1,0 +1,17 @@
+# Example controllers configuration (edit to match your tuned params/artifacts)
+dt: 0.02
+
+PID:
+  kp: 1.5
+  ki: 0.2
+  kd: 0.05
+  umin: -1.0
+  umax: 1.0
+
+FLC:
+  scale: 1.0
+  umin: -1.0
+  umax: 1.0
+
+RL:
+  model_path: config/optimized_controllers/RL_Agent_Optimized.zip  # adjust
