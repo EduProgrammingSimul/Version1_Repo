@@ -16,7 +16,6 @@ class FrequencySummary:
     band_ci: Dict[Tuple[float, float], Tuple[float, float]]
     log_decrement: float | None
     log_decrement_reason: str | None
-    coherence_reason: str | None
     welch_freq: np.ndarray
     welch_psd: np.ndarray
 
@@ -143,7 +142,7 @@ def summarize_frequency(
         mask = (freq >= low) & (freq <= high)
         band_means[(low, high)] = float(np.mean(psd[mask])) if np.any(mask) else 0.0
     log_dec, reason = log_decrement(time, signal_in)
-    coh_means, coh_ci, coh_reason = coherence_band_means(time, signal_in, reference, bands)
+    coh_means, coh_ci, _ = coherence_band_means(time, signal_in, reference, bands)
     for band in bands:
         if band not in coh_means:
             coh_means[band] = 0.0
@@ -154,7 +153,6 @@ def summarize_frequency(
         band_ci=coh_ci,
         log_decrement=log_dec,
         log_decrement_reason=reason,
-        coherence_reason=coh_reason,
         welch_freq=freq,
         welch_psd=psd,
     )

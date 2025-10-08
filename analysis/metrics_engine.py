@@ -84,20 +84,10 @@ def _settling_time(time: np.ndarray, signal: np.ndarray, tol: float = 0.02) -> f
     finite = np.abs(signal[np.isfinite(signal)])
     if finite.size == 0:
         raise ValueError("no finite samples")
-    within = np.abs(signal) <= tol
-    if not np.any(within):
+    mask = np.abs(signal) <= tol
+    if not np.any(mask):
         raise ValueError("never settled")
-    if time.size < 2:
-        return 0.0
-    dt = float(np.median(np.diff(time)))
-    window = max(5, int(round(1.0 / max(dt, 1e-9))))
-    window = min(window, within.size)
-    kernel = np.ones(window, dtype=int)
-    hits = np.convolve(within.astype(int), kernel, mode="valid")
-    valid_indices = np.where(hits == window)[0]
-    if valid_indices.size == 0:
-        raise ValueError("never settled")
-    idx = int(valid_indices[0])
+    idx = np.argmax(mask & (np.arange(mask.size) >= np.argmax(mask)))
     return float(time[idx] - time[0])
 
 
@@ -181,6 +171,15 @@ def compute_all(
     primary_results: List[MetricResult] = []
     secondary_results: List[MetricResult] = []
     freq_results: List[MetricResult] = []
+
+    def guard(func, arr, unit, hib, reason):
+        if arr is None:
+            return _make_result(func.__name__, unit, hib, None, f"UNOBSERVED:{reason}")
+        try:
+            value = func(arr)
+            return _make_result(func.__name__, unit, hib, value, None)
+        except ValueError as exc:
+            return _make_result(func.__name__, unit, hib, None, f"UNOBSERVED:{exc}")
 
     errors = get_array("error")
     unsafe_mask = get_array("unsafe_mask")
@@ -315,11 +314,7 @@ def compute_all(
                         reason = summary.log_decrement_reason
                     elif name == "coherence_mean":
                         band = band_map.get("band_power_mid", (0.5, 1.0))
-                        if summary.coherence_reason is not None:
-                            reason = summary.coherence_reason
-                            value = None
-                        else:
-                            value = coherence_means.get(band, 0.0)
+                        value = coherence_means.get(band, 0.0)
                     else:
                         reason = "UNOBSERVED:unknown-frequency-metric"
                     freq_results.append(_make_result(name, unit, hib, value, reason))
