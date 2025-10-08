@@ -1,0 +1,100 @@
+{
+  "seven_dimensions": {
+    "robustness": [
+      {
+        "metric_name": "time_outside_freq_limit_s",
+        "weight": 1.0,
+        "higher_is_better_override": false
+      },
+      {
+        "metric_name": "total_time_unsafe_s",
+        "weight": 1.0,
+        "higher_is_better_override": false
+      }
+    ],
+    "control_efficiency": [
+      {
+        "metric_name": "control_effort_valve_abs_sum",
+        "weight": 1.0,
+        "higher_is_better_override": false
+      }
+    ],
+    "oscillation_damping": [
+      {
+        "metric_name": "core_power_oscillation_index",
+        "weight": 1.0,
+        "higher_is_better_override": false
+      },
+      {
+        "metric_name": "ringing_index",
+        "weight": 1.0,
+        "higher_is_better_override": false
+      }
+    ],
+    "thermal_resilience": [
+      {
+        "metric_name": "integrated_thermal_margin_violation_c_s",
+        "weight": 1.0,
+        "higher_is_better_override": false
+      },
+      {
+        "metric_name": "max_fuel_temp_c",
+        "weight": 0.5,
+        "higher_is_better_override": false
+      }
+    ],
+    "stability": [
+      {
+        "metric_name": "tail_power_std",
+        "weight": 1.0,
+        "higher_is_better_override": false
+      }
+    ],
+    "load_following": [
+      {
+        "metric_name": "grid_load_following_index",
+        "weight": 1.0,
+        "higher_is_better_override": true
+      },
+      {
+        "metric_name": "iae_power_mw_s",
+        "weight": 1.0,
+        "higher_is_better_override": false
+      }
+    ],
+    "actuator_preservation": [
+      {
+        "metric_name": "time_in_saturation_s",
+        "weight": 1.0,
+        "higher_is_better_override": false
+      },
+      {
+        "metric_name": "saturation_events",
+        "weight": 0.5,
+        "higher_is_better_override": false
+      }
+    ]
+  },
+  "crs_weights": [
+    {
+      "metric_name": "grid_load_following_index",
+      "weight": 1.5
+    },
+    {
+      "metric_name": "time_outside_freq_limit_s",
+      "weight": 1.0
+    },
+    {
+      "metric_name": "integrated_thermal_margin_violation_c_s",
+      "weight": 1.0
+    },
+    {
+      "metric_name": "control_effort_valve_abs_sum",
+      "weight": 0.8
+    },
+    {
+      "metric_name": "core_power_oscillation_index",
+      "weight": 0.8
+    }
+  ]
+}

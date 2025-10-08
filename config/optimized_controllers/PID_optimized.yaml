@@ -1,0 +1,22 @@
+# config/optimized_controllers/PID_optimized.yaml
+
+# ==============================================================================
+#          Optimized PID Controller Gains (DTAF v2.2)
+# ==============================================================================
+# This file contains the optimized gains for the PID controller as determined
+# by the robust, multi-scenario Differential Evolution optimizer.
+#
+# The main_analysis.py script will automatically load these parameters when
+# the 'PID_optimized' controller is selected for comparison.
+# ==============================================================================
+
+PID_optimized:
+  # Proportional Gain (Kp): Responds to the current error.
+  kp: 0.1252196813279085
+
+  # Integral Gain (Ki): Eliminates steady-state error by accumulating past errors.
+  ki: 0.029590374130603503
+
+  # Derivative Gain (Kd): Dampens oscillations by anticipating future error.
+  kd: 0.22960898364702764
+

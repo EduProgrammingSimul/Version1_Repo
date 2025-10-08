@@ -1,0 +1,4 @@
+- Use Python 3.10 and pinned deps.
+- Baseline reproduction uses frozen artifacts (PID/FLC YAMLs, RL checkpoint).
+- Deterministic eval recommended; PCA is deterministic; Matplotlib used without random styles.
+- RUN_INFO.json captures environment + pip freeze.

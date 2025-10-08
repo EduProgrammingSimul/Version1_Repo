@@ -1,0 +1,9 @@
+# How to pick artifacts automatically when multiple exist.
+# Policies: latest, best, tag:<name>
+policy: latest           # default policy if none provided elsewhere
+
+# Optional: quality metric key in registry entries (if using 'best')
+score_key: "val_score"   # change to your metric (e.g., 'mean_return', 'tracking_rmse_neg')
+
+# Optional: only consider artifacts whose 'status' is 'validated'
+require_validated: true

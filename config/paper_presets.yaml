@@ -1,0 +1,9 @@
+dpi: 300
+save_formats: ["png", "svg"]
+font:
+  family: "DejaVu Sans"
+  size: 10
+lines:
+  linewidth: 1.8
+layout:
+  tight: true

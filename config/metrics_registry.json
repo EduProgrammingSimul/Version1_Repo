@@ -1,0 +1,55 @@
+{
+  "metrics": {
+    "time_outside_freq_limit_s": {
+      "hib": false,
+      "units": "s",
+      "definition": "Cumulative time |freq - f0| > 0.5 Hz"
+    },
+    "total_time_unsafe_s": {
+      "hib": false,
+      "units": "s",
+      "definition": "Cumulative time any safety constraint is violated (freq band, actuator saturation, thermal margin)"
+    },
+    "core_power_oscillation_index": {
+      "hib": false,
+      "units": "",
+      "definition": "Spectral energy ratio of core-power oscillations in [0.1, 1.0] Hz after transient exclusion"
+    },
+    "control_effort_valve_abs_sum": {
+      "hib": false,
+      "units": ""
+    },
+    "integrated_thermal_margin_violation_c_s": {
+      "hib": false,
+      "units": "C*s"
+    },
+    "max_fuel_temp_c": {
+      "hib": false,
+      "units": "C"
+    },
+    "tail_power_std": {
+      "hib": false,
+      "units": ""
+    },
+    "ringing_index": {
+      "hib": false,
+      "units": ""
+    },
+    "grid_load_following_index": {
+      "hib": true,
+      "units": ""
+    },
+    "iae_power_mw_s": {
+      "hib": false,
+      "units": "MW*s"
+    },
+    "time_in_saturation_s": {
+      "hib": false,
+      "units": "s"
+    },
+    "saturation_events": {
+      "hib": false,
+      "units": ""
+    }
+  }
+}

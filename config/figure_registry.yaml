@@ -1,0 +1,115 @@
+﻿figures:
+  - id: radar_perf_profile_all_controllers
+    kind: radar
+    source: csv
+    path: results/metrics/perf_profile_7d.csv
+    index: controller
+    dimensions: [Robustness, Control Efficiency, Oscillation Damping, Thermal Resilience, Stability, Load Following, Actuator Preservation]
+    value_col: value_norm
+    dpi: 300
+    caption: "Multi-attribute performance profile (normalized 0-1)."
+
+  - id: heatmap_scenario_controller_comprehensive
+    kind: heatmap
+    source: csv
+    path: results/metrics/scenario_controller_score.csv
+    rows: scenario
+    cols: controller
+    value_col: score_norm
+    annotate: true
+    dpi: 300
+    caption: "Scenario-controller normalized comprehensive scores."
+
+  - id: heatmap_metric_correlation_all
+    kind: corr_heatmap
+    source: csv
+    path: results/metrics/corr_metrics.csv
+    method: pearson
+    dpi: 300
+    caption: "Pearson correlation across KPIs."
+
+  - id: policy_manifold_pca_all
+    kind: policy_manifold
+    source: parquet
+    path: results/metrics/policy_manifold_points.parquet
+    x: pc1
+    y: pc2
+    hue: controller
+    dpi: 300
+    caption: "Policy manifold PCA embedding (per-step samples)."
+
+  - id: action_stats_all
+    kind: action_stats
+    source: timeseries
+    dpi: 300
+    caption: "Distribution of valve actions by controller."
+
+  - id: tornado_top_scenarios_effect
+    kind: tornado
+    source: csv
+    path: results/metrics/combined_metrics_tidy.csv
+    baseline: PID
+    challenger: RL
+    dpi: 300
+    title: "RL vs PID metric deltas"
+
+  - id: paper_summary_figure
+    kind: heatmap
+    source: csv
+    path: results/metrics/perf_profile_7d.csv
+    rows: scenario
+    cols: controller
+    value_col: value_norm
+    dpi: 300
+    caption: "Per-scenario normalized dimensions (summary sheet)."
+
+  - id: metric_iae_abs_err_summary
+    kind: metric_summary
+    source: csv
+    path: results/metrics/combined_metrics_tidy.csv
+    metric: iae_abs_err
+    dpi: 300
+    title: "Mean IAE by controller"
+    ylabel: "IAE (MW*s)"
+
+  - id: metric_rmse_error_summary
+    kind: metric_summary
+    source: csv
+    path: results/metrics/combined_metrics_tidy.csv
+    metric: rmse_error
+    dpi: 300
+    title: "Mean RMSE by controller"
+    ylabel: "RMSE (MW)"
+
+  - id: metric_glfi_summary
+    kind: metric_summary
+    source: csv
+    path: results/metrics/combined_metrics_tidy.csv
+    metric: glfi
+    dpi: 300
+    title: "Grid Load Following Index"
+    ylabel: "Index"
+
+  
+  - id: metric_effort_l1_summary
+    kind: metric_summary
+    source: csv
+    path: results/metrics/combined_metrics_tidy.csv
+    metric: effort_l1
+    dpi: 300
+    title: "Control Effort"
+    ylabel: "|u| dt"
+
+  - id: metric_max_freq_deviation_hz_summary
+    kind: metric_summary
+    source: csv
+    path: results/metrics/combined_metrics_tidy.csv
+    metric: max_freq_deviation_hz
+    dpi: 300
+    title: "Max Frequency Deviation"
+    ylabel: "Hz"
+
+
+
+
+

@@ -1,0 +1,37 @@
+# config/default.yaml
+
+# ==============================================================================
+#                 Example Configuration Override File (DTAF v2.2)
+# ==============================================================================
+# This file serves as an example of how to provide specific configurations
+# for different optimization methods or experimental setups without modifying
+# the main parameters.py file.
+#
+# The analysis and optimization scripts can be designed to load this file
+# and merge its contents over the base configuration.
+# ==============================================================================
+
+optimization:
+  PID:
+    # Example override for the Ziegler-Nichols Reaction Curve method.
+    # This method requires the system to run in open-loop for a period,
+    # so we might want to use wider safety limits specifically for this test.
+    ZN_ReactionCurve:
+      # A longer step time might be suitable for this open-loop test.
+      step_time_s: 60.0
+
+      # Temporarily widen the frequency safety limits to allow the system
+      # to respond naturally without triggering a premature termination.
+      # WARNING: This should only be used for specific, controlled tuning
+      # scenarios and not for general validation.
+      override_termination_limits:
+        min_frequency_hz: 59.0
+        max_frequency_hz: 61.0
+
+# You could add other specific configurations here, for example:
+#
+# reporting:
+#   special_report:
+#     template_name: 'special_report_template.md'
+#     report_title: 'Special Investigation Report'
+

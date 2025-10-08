@@ -1,0 +1,12 @@
+# Source of truth for the evaluation suite (one per line; comments allowed)
+baseline_steady_state
+sudden_load_increase_5pct
+gradual_load_increase_10pct
+cascading_grid_fault_and_recovery
+steady_state_efficiency_probe
+parameter_randomization_drills
+deceptive_sensor_noise
+combined_challenge_final_exam
+prbs_excitation_probe
+multisine_frequency_probe
+actuator_saturation_challenge

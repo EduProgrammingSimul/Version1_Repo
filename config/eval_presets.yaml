@@ -1,0 +1,13 @@
+eval_seed: 42
+horizon_s: 600
+ts_downsample: 1
+signals:
+  - t
+  - y_target
+  - y_actual
+  - u
+  - action_cmd
+  - actuator_saturated
+  - freq_hz
+  - mech_power_mw
+  - fuel_temp_c

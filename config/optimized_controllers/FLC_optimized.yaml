@@ -1,0 +1,25 @@
+# config/optimized_controllers/FLC_optimized.yaml
+
+# ==============================================================================
+#          Optimized FLC Controller Scaling Factors (DTAF v2.2)
+# ==============================================================================
+# This file contains the optimized scaling factors for the FLC as determined
+# by the robust, multi-scenario Differential Evolution optimizer.
+#
+# The main_analysis.py script will automatically load these parameters when
+# the 'FLC_optimized' controller is selected for comparison.
+# ==============================================================================
+
+FLC_optimized:
+  # Scales the speed error input. A larger value makes the controller
+  # more sensitive to deviations from the setpoint.
+  error_scaling: 5.285211363157153
+
+  # Scales the change-in-error (derivative) input. A larger value makes
+  # the controller more responsive to the rate of change of the error.
+  derror_scaling: 1.058488034229276
+
+  # Scales the final defuzzified output. This adjusts the overall
+  # aggressiveness of the controller's actions.
+  output_scaling: 2.5598724487003084
+
