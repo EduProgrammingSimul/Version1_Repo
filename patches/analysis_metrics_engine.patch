@@ -1,0 +1,8 @@
+*** a/analysis/metrics_engine.py
+--- b/analysis/metrics_engine.py
+@@
++"""
++Patch: ensure tidy combined_metrics_summary.csv with columns:
++run_id, scenario, controller, metric_name, value, units, direction, higher_is_better
++Add metrics: iae_power_mw_s, tail_power_std, time_in_saturation_s, saturation_events, ringing_index.
++"""

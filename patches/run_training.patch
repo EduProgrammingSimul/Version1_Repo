@@ -1,0 +1,7 @@
+*** a/run_training.py
+--- b/run_training.py
+@@
++"""
++Patch: add --validate-only --model PATH --deterministic flags.
++When --validate-only is provided, skip training and run evaluation scenarios.
++"""

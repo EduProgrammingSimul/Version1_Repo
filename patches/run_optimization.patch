@@ -1,0 +1,6 @@
+*** a/run_optimization.py
+--- b/run_optimization.py
+@@
++"""
++Patch: add --validate-only to evaluate tuned PID/FLC without running optimization.
++"""

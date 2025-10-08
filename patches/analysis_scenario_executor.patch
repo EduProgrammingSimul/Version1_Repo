@@ -1,0 +1,6 @@
+*** a/analysis/scenario_executor.py
+--- b/analysis/scenario_executor.py
+@@
++"""
++Patch: add run(controllers, scenarios, cfg) that writes per-scenario time-series CSVs with action_cmd and actuator_saturated.
++"""
